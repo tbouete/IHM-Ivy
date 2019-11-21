@@ -13,26 +13,101 @@
    <rule id="answer" scope="public"> 
     <ruleref special="GARBAGE" /> 
     <one-of>
-      <item><ruleref uri="#yes"/>
-          <tag>out="yes";</tag></item>
-      <item><ruleref uri="#no"/>
-      <tag>out="no";</tag></item>
+	  <item><ruleref uri="#ici"/>
+		<tag>out="ici";</tag></item>
+	  <item><ruleref uri="#cet objet"/>
+		<tag>out="cet objet";</tag></item>
+	  <item><ruleref uri="#ce rectangle"/>
+		<tag>out="ce rectangle";</tag></item>
+	  <item><ruleref uri="#cette ellipse"/>
+		<tag>out="cette ellipse";</tag></item>
+	  <item><ruleref uri="#rouge"/>
+		<tag>out="rouge";</tag></item>
+	  <item><ruleref uri="#vert"/>
+		<tag>out="vert";</tag></item>
+	  <item><ruleref uri="#bleu"/>
+		<tag>out="bleu";</tag></item>
+	  <item><ruleref uri="#jaune"/>
+		<tag>out="jaune";</tag></item>
+	  <item><ruleref uri="#noir"/>
+		<tag>out="noir";</tag></item>
+	  <item><ruleref uri="#blanc"/>
+		<tag>out="blanc";</tag></item>
     </one-of>
     <ruleref special="GARBAGE" />
   </rule>
        
-   <rule id="yes">
-    <one-of>
-      <item>affirmatif</item>
-      <item>tout à fait</item>
-      <item>oui</item>
-    </one-of> 
-  </rule> 
-  <rule id="no">
-    <one-of>
-      <item>négatif</item>
-      <item>non</item>
-      <item>pas question</item>
-    </one-of>
+
+  <rule id="ici">
+	<one-of>
+		<item>ici</item>
+		<item>là</item>
+		<item>à cette position</item>
+		<item>here</item>
+	</one-of>
+  </rule>
+  
+   <rule id="cet objet">
+	<one-of>
+		<item>cet objet</item>
+		<item>celui-là</item>
+		<item>this object</item>
+		<item>that object</item>
+		<item>this one</item>
+		<item>that one</item>
+	</one-of>
+  </rule>
+  
+  <rule id="ce rectangle">
+	<one-of>
+		<item>ce rectangle</item>
+		<item>this rectangle</item>
+		<item>that rectangle</item>
+	</one-of>
+  </rule>
+  
+  <rule id="cette ellipse">
+	<one-of>
+		<item>cette ellipse</item>
+		<item>this ellipse</item>
+		<item>that ellipse</item>
+	</one-of>
+  </rule>
+
+  <rule id="rouge">
+	<one-of>
+		<item>red</item>
+		<item>rouge</item>
+	</one-of>
+  </rule>
+  <rule id="vert">
+	<one-of>
+		<item>green</item>
+		<item>vert</item>
+	</one-of>
+  </rule>
+  <rule id="bleu">
+	<one-of>
+		<item>blue</item>
+		<item>bleu</item>
+	</one-of>
+  </rule>
+  <rule id="jaune">
+	<one-of>
+		<item>yellow</item>
+		<item>jaune</item>
+	</one-of>
+  </rule>
+  <rule id="noir">
+	<one-of>
+		<item>black</item>
+		<item>noir</item>
+	</one-of>
+  </rule>
+  <rule id="blanc">
+	<one-of>
+		<item>white</item>
+		<item>blanc</item>
+	</one-of>
   </rule>
 </grammar>

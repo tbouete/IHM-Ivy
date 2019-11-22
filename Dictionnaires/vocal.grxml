@@ -15,14 +15,14 @@
     <one-of>
 	  <item><ruleref uri="#ici"/>
 		<tag>out="ici";</tag></item>
-	  <item><ruleref uri="#aléatoire"/>
-		<tag>out="aléatoire";</tag></item>
-	  <item><ruleref uri="#cet objet"/>
-		<tag>out="cet objet";</tag></item>
-	  <item><ruleref uri="#ce rectangle"/>
-		<tag>out="ce rectangle";</tag></item>
-	  <item><ruleref uri="#cette ellipse"/>
-		<tag>out="cette ellipse";</tag></item>
+	  <item><ruleref uri="#aleatoire"/>
+		<tag>out="aleatoire";</tag></item>
+	  <item><ruleref uri="#cet_objet"/>
+		<tag>out="cet_objet";</tag></item>
+	  <item><ruleref uri="#ce_rectangle"/>
+		<tag>out="ce_rectangle";</tag></item>
+	  <item><ruleref uri="#cette_ellipse"/>
+		<tag>out="cette_ellipse";</tag></item>
 	  <item><ruleref uri="#rouge"/>
 		<tag>out="rouge";</tag></item>
 	  <item><ruleref uri="#vert"/>
@@ -49,14 +49,14 @@
 	</one-of>
   </rule>
   
-  <rule id="aléatoire">
+  <rule id="aleatoire">
 	<one-of>
 		<item>aléatoire</item>
 		<item>random</item>
 	</one-of>
   </rule>
   
-   <rule id="cet objet">
+   <rule id="cet_objet">
 	<one-of>
 		<item>cet objet</item>
 		<item>celui-là</item>
@@ -67,7 +67,7 @@
 	</one-of>
   </rule>
   
-  <rule id="ce rectangle">
+  <rule id="ce_rectangle">
 	<one-of>
 		<item>ce rectangle</item>
 		<item>this rectangle</item>
@@ -75,7 +75,7 @@
 	</one-of>
   </rule>
   
-  <rule id="cette ellipse">
+  <rule id="cette_ellipse">
 	<one-of>
 		<item>cette ellipse</item>
 		<item>this ellipse</item>

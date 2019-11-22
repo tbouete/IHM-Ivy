@@ -29,8 +29,8 @@
 		<tag>out="vert";</tag></item>
 	  <item><ruleref uri="#bleu"/>
 		<tag>out="bleu";</tag></item>
-	  <item><ruleref uri="#jaune"/>
-		<tag>out="jaune";</tag></item>
+	  <item><ruleref uri="#dore"/>
+		<tag>out="dore";</tag></item>
 	  <item><ruleref uri="#noir"/>
 		<tag>out="noir";</tag></item>
 	  <item><ruleref uri="#blanc"/>
@@ -101,10 +101,10 @@
 		<item>bleu</item>
 	</one-of>
   </rule>
-  <rule id="jaune">
+  <rule id="dore">
 	<one-of>
-		<item>yellow</item>
-		<item>jaune</item>
+		<item>golden</item>
+		<item>doré</item>
 	</one-of>
   </rule>
   <rule id="noir">

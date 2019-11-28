@@ -23,6 +23,8 @@
 		<tag>out="ce_rectangle";</tag></item>
 	  <item><ruleref uri="#cette_ellipse"/>
 		<tag>out="cette_ellipse";</tag></item>
+	  <item><ruleref uri="#cette_couleur"/>
+		<tag>out="cette_couleur";</tag></item>
 	  <item><ruleref uri="#rouge"/>
 		<tag>out="rouge";</tag></item>
 	  <item><ruleref uri="#vert"/>
@@ -80,6 +82,14 @@
 		<item>cette ellipse</item>
 		<item>this ellipse</item>
 		<item>that ellipse</item>
+	</one-of>
+  </rule>
+  
+  <rule id="cette_couleur">
+	<one-of>
+		<item>cette couleur/item>
+		<item>this color</item>
+		<item>that color</item>
 	</one-of>
   </rule>
 

@@ -1,4 +1,4 @@
-package command;
+package utility;
 
 public enum AvailableColors {
 	
@@ -7,6 +7,7 @@ public enum AvailableColors {
 	BLUE,
 	BLACK,
 	WHITE,
-	GOLDEN
+	GOLDEN,
+	RANDOM
 
 }

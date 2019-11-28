@@ -1,8 +1,6 @@
-package moteur_fusion_multimodale;
+package utility;
 
 public class IvyUtilitaire {
-
-	public final static String IVY_PALETTE_MOUSEMOVED = "^Palette:MouseMoved x=(.*) y=(.*)$";
 	
 	public final static int[] COLOR_RED = {255, 0, 0};
 	public final static int[] COLOR_GREEN = {0, 255, 0};

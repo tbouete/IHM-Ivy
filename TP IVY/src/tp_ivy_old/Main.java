@@ -1,4 +1,4 @@
-package tp_ivy;
+package tp_ivy_old;
 
 import fr.dgac.ivy.Ivy;
 import fr.dgac.ivy.IvyApplicationListener;
@@ -43,7 +43,8 @@ public class Main {
 		try {
 			this.ivy.start("127.255.255.255:2010");
 			Thread.sleep(1000);
-			this.ivy.sendMsg(this.getStringCreerRectangleRandom());
+			//this.ivy.sendMsg(this.getStringCreerRectangleRandom());
+			this.ivy.sendMsg("Palette:CreateRectangle x=0 y=0 longueur=50 hauteur=50");
 			
 			String regex = "^Palette:MouseMoved x=(.*) y=(.*)$";
 			this.ivy.bindMsg(regex, new IvyMessageListener() {

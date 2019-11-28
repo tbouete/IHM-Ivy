@@ -1,4 +1,4 @@
-package command;
+package utility;
 
 public enum AvailableShapes {
 	RECTANGLE,

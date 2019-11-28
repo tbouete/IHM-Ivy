@@ -1,7 +1,9 @@
 package command;
 
 import fr.dgac.ivy.Ivy;
-import moteur_fusion_multimodale.IvyUtilitaire;
+import utility.AvailableColors;
+import utility.AvailableShapes;
+import utility.IvyUtilitaire;
 
 public class CommandCreateShape extends ACommand {
 	
@@ -19,7 +21,7 @@ public class CommandCreateShape extends ACommand {
 		
 		
 		//Select the shape to create
-		String strShape = "";
+		String strShape;
 		
 		switch(this.shape) {
 		case RECTANGLE:
@@ -39,7 +41,7 @@ public class CommandCreateShape extends ACommand {
 				" y=" + y +
 				" longueur=" + longeur + 
 				" hauteur=" + hauteur + 
-				" couleurFond=" + couleurContourR + ":" + couleurContourG + ":" + couleurContourB + 
+				" couleurFond=" + couleurFondR + ":" + couleurFondG + ":" + couleurFondB + 
 				" couleurContour=" + couleurContourR + ":" + couleurContourG + ":" + couleurContourB;
 		this.setCommand(newCommand);
 	}
@@ -131,7 +133,7 @@ public class CommandCreateShape extends ACommand {
 				border[0], border[1], border[2]);
 	}
 	
-	private void setAllParametersRandom() {
+	public void setAllParametersRandom() {
 		this.setAllParameters((int)(Math.random()*200), (int)(Math.random()*200),
 				(int)(Math.random()*200), (int)(Math.random()*200),
 				(int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255),

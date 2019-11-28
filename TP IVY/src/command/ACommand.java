@@ -12,8 +12,12 @@ public abstract class ACommand {
 		this.ivy = ivy;
 	}
 	
-	public void execute(String... args) throws IvyException {
-		this.ivy.sendMsg(command);
+	public void execute() {
+		try {
+			this.ivy.sendMsg(command);
+		} catch (IvyException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public String getCommand() {

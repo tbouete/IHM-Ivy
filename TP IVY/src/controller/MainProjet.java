@@ -339,10 +339,7 @@ public class MainProjet {
 
 			default:
 				break;
-			}
-			
-			this.drawRedRectangleOnRedSRA5();
-			
+			}			
 		} catch (IvyException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
@@ -351,39 +348,39 @@ public class MainProjet {
 		
 	}
 
-	private void drawRedRectangleOnRedSRA5() throws IvyException {
-		this.ivy.bindMsg(IvyRecognizedMessages.REGEX_SRA5_ROUGE, new IvyMessageListener() {
-			
-			@Override
-			public void receive(IvyClient client, String[] args) {
-				CommandCreateShape command = new CommandCreateShape(ivy, AvailableShapes.RECTANGLE);
-				command.setAllParametersRandom();
-				command.execute();					
-			}
-		});
-	}
-	
-	private void drawRandomEllipseOnMouseClicked() throws IvyException {
-		this.ivy.bindMsg(IvyRecognizedMessages.REGEX_MOUSE_CLICKED, new IvyMessageListener() {
-			
-			@Override
-			public void receive(IvyClient client, String[] args) {
-				CommandCreateShape command = new CommandCreateShape(ivy, AvailableShapes.ELLIPSE);
-				command.setAllParametersRandom();
-				command.execute();					
-			}
-		});
-	}
-	
-	private void drawRandomRectangleOnMouseClicked() throws IvyException {
-		this.ivy.bindMsg(IvyRecognizedMessages.REGEX_MOUSE_CLICKED, new IvyMessageListener() {
-			
-			@Override
-			public void receive(IvyClient client, String[] args) {
-				CommandCreateShape command = new CommandCreateShape(ivy, AvailableShapes.RECTANGLE);
-				command.setAllParametersRandom();
-				command.execute();					
-			}
-		});
-	}
+//	private void drawRedRectangleOnRedSRA5() throws IvyException {
+//		this.ivy.bindMsg(IvyRecognizedMessages.REGEX_SRA5_ROUGE, new IvyMessageListener() {
+//			
+//			@Override
+//			public void receive(IvyClient client, String[] args) {
+//				CommandCreateShape command = new CommandCreateShape(ivy, AvailableShapes.RECTANGLE);
+//				command.setAllParametersRandom();
+//				command.execute();					
+//			}
+//		});
+//	}
+//	
+//	private void drawRandomEllipseOnMouseClicked() throws IvyException {
+//		this.ivy.bindMsg(IvyRecognizedMessages.REGEX_MOUSE_CLICKED, new IvyMessageListener() {
+//			
+//			@Override
+//			public void receive(IvyClient client, String[] args) {
+//				CommandCreateShape command = new CommandCreateShape(ivy, AvailableShapes.ELLIPSE);
+//				command.setAllParametersRandom();
+//				command.execute();					
+//			}
+//		});
+//	}
+//	
+//	private void drawRandomRectangleOnMouseClicked() throws IvyException {
+//		this.ivy.bindMsg(IvyRecognizedMessages.REGEX_MOUSE_CLICKED, new IvyMessageListener() {
+//			
+//			@Override
+//			public void receive(IvyClient client, String[] args) {
+//				CommandCreateShape command = new CommandCreateShape(ivy, AvailableShapes.RECTANGLE);
+//				command.setAllParametersRandom();
+//				command.execute();					
+//			}
+//		});
+//	}
 }

@@ -12,6 +12,8 @@ public class CommandToBeCreated {
 	private AvailableShapes shape;
 	private Integer posX;
 	private Integer posY;
+	private Integer targetPosX;
+	private Integer targetPosY;
 	private AvailableColors color;
 	
 	public CommandToBeCreated(Ivy ivy) {
@@ -50,6 +52,22 @@ public class CommandToBeCreated {
 	public void setPosY(int posY) {
 		this.posY = posY;
 	}
+	public Integer getTargetPosX() {
+		return targetPosX;
+	}
+
+	public void setTargetPosX(int targetPosX) {
+		this.targetPosX = targetPosX;
+	}
+
+	public Integer getTargetPosY() {
+		return targetPosY;
+	}
+
+	public void setTargetPosY(int targetPosY) {
+		this.targetPosY = targetPosY;
+	}
+
 	public AvailableColors getColor() {
 		return color;
 	}
@@ -69,7 +87,9 @@ public class CommandToBeCreated {
 				break;
 			case Deplacer:
 				if(posX != null
-					&& posY != null) {
+					&& posY != null
+					&& targetPosX != null
+					&& targetPosY != null) {
 						return true;
 				}
 				break;

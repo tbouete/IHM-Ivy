@@ -64,12 +64,20 @@ public class CommandToBeCreated {
 					&& posX != null
 					&& posY != null
 					&& color != null) {
-					return true;
+						return true;
 				}
 				break;
 			case Deplacer:
+				if(posX != null
+					&& posY != null) {
+						return true;
+				}
 				break;
 			case Supprimer:
+				if(posX != null
+					&& posY != null) {
+						return true;
+				}
 				break;
 			default:
 				return false;

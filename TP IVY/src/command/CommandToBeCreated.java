@@ -40,13 +40,13 @@ public class CommandToBeCreated {
 	public void setShape(AvailableShapes shape) {
 		this.shape = shape;
 	}
-	public int getPosX() {
+	public Integer getPosX() {
 		return posX;
 	}
 	public void setPosX(int posX) {
 		this.posX = posX;
 	}
-	public int getPosY() {
+	public Integer getPosY() {
 		return posY;
 	}
 	public void setPosY(int posY) {

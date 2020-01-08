@@ -1,13 +1,9 @@
 package controller;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.Timer;
 
 import command.ACommand;
 import command.CommandBuilder;
-import command.CommandCreateShape;
 import command.CommandToBeCreated;
 import fr.dgac.ivy.Ivy;
 import fr.dgac.ivy.IvyApplicationListener;
@@ -23,6 +19,7 @@ public class MainProjet {
 	
 	private Ivy ivy;
 	private States currentState;
+	private CommandToBeCreated currentCommand;
 
 	public static void main(String[] args) {
 		MainProjet main = new MainProjet();
@@ -67,7 +64,7 @@ public class MainProjet {
 			
 			@Override
 			public void disconnect(IvyClient client) {
-				System.out.println("Disconnect");				
+				System.out.println("Disconnected: " + client.getApplicationName());				
 			}
 			
 			@Override
@@ -77,12 +74,12 @@ public class MainProjet {
 			
 			@Override
 			public void die(IvyClient client, int id, String msgarg) {
-				System.out.println("die");				
+				System.out.println("Died: " + client.getApplicationName());				
 			}
 			
 			@Override
 			public void connect(IvyClient client) {
-				System.out.println("connect");
+				System.out.println("Connected:" + client.getApplicationName());
 				
 			}
 		});
@@ -91,12 +88,12 @@ public class MainProjet {
 			this.ivy.start("127.255.255.255:2010");
 			Thread.sleep(1000);		
 			
-			do{//repeat for continuous program
-				
-				CommandToBeCreated currentCommand = new CommandToBeCreated(ivy);
+			this.currentCommand = new CommandToBeCreated(ivy);
+			
+			while(true){//repeat for continuous program
 				
 				switch (currentState) {
-				case E0:
+				case E0:					
 					this.ivy.bindMsg(IvyRecognizedMessages.REGEX_RECO_SUPPRIMER, new IvyMessageListener() {
 						@Override
 						public void receive(IvyClient client, String[] args) {
@@ -116,6 +113,7 @@ public class MainProjet {
 					this.ivy.bindMsg(IvyRecognizedMessages.REGEX_RECO_ELLIPSE, new IvyMessageListener() {
 						@Override
 						public void receive(IvyClient client, String[] args) {
+							System.out.println("E0 : REGEX_RECO_ELLIPSE");
 							currentCommand.setAction(AvailableActions.Creer);
 							currentCommand.setShape(AvailableShapes.ELLIPSE);
 							currentState = States.E1;
@@ -125,11 +123,13 @@ public class MainProjet {
 					this.ivy.bindMsg(IvyRecognizedMessages.REGEX_RECO_RECTANGLE, new IvyMessageListener() {
 						@Override
 						public void receive(IvyClient client, String[] args) {
+							System.out.println("E0 : REGEX_RECO_RECTANGLE");
 							currentCommand.setAction(AvailableActions.Creer);
 							currentCommand.setShape(AvailableShapes.RECTANGLE);
 							currentState = States.E1;
 						}
 					});
+					Thread.sleep(1000);	
 					break;
 				case E1:
 					//déclencher timer 5s annulation commande si incomplète
@@ -141,6 +141,7 @@ public class MainProjet {
 					this.ivy.bindMsg(IvyRecognizedMessages.REGEX_SRA5_ALEATOIRE, new IvyMessageListener() {
 						@Override
 						public void receive(IvyClient client, String[] args) {
+							System.out.println("E1 : REGEX_SRA5_ALEATOIRE");
 							currentCommand.setColor(AvailableColors.RANDOM);
 							currentState = States.E1;
 						}
@@ -149,6 +150,7 @@ public class MainProjet {
 					this.ivy.bindMsg(IvyRecognizedMessages.REGEX_SRA5_BLANC, new IvyMessageListener() {
 						@Override
 						public void receive(IvyClient client, String[] args) {
+							System.out.println("E1 : REGEX_SRA5_BLANC");
 							currentCommand.setColor(AvailableColors.WHITE);
 							currentState = States.E1;
 						}
@@ -157,6 +159,7 @@ public class MainProjet {
 					this.ivy.bindMsg(IvyRecognizedMessages.REGEX_SRA5_BLEU, new IvyMessageListener() {
 						@Override
 						public void receive(IvyClient client, String[] args) {
+							System.out.println("E1 : REGEX_SRA5_BLEU");
 							currentCommand.setColor(AvailableColors.BLUE);
 							currentState = States.E1;
 						}
@@ -165,6 +168,7 @@ public class MainProjet {
 					this.ivy.bindMsg(IvyRecognizedMessages.REGEX_SRA5_DORE, new IvyMessageListener() {
 						@Override
 						public void receive(IvyClient client, String[] args) {
+							System.out.println("E1 : REGEX_SRA5_DORE");
 							currentCommand.setColor(AvailableColors.GOLDEN);
 							currentState = States.E1;
 						}
@@ -173,6 +177,7 @@ public class MainProjet {
 					this.ivy.bindMsg(IvyRecognizedMessages.REGEX_SRA5_NOIR, new IvyMessageListener() {
 						@Override
 						public void receive(IvyClient client, String[] args) {
+							System.out.println("E1 : REGEX_SRA5_NOIR");
 							currentCommand.setColor(AvailableColors.BLACK);
 							currentState = States.E1;
 						}
@@ -181,6 +186,7 @@ public class MainProjet {
 					this.ivy.bindMsg(IvyRecognizedMessages.REGEX_SRA5_ROUGE, new IvyMessageListener() {
 						@Override
 						public void receive(IvyClient client, String[] args) {
+							System.out.println("E1 : REGEX_SRA5_ROUGE");
 							currentCommand.setColor(AvailableColors.RED);
 							currentState = States.E1;
 						}
@@ -189,6 +195,7 @@ public class MainProjet {
 					this.ivy.bindMsg(IvyRecognizedMessages.REGEX_SRA5_VERT, new IvyMessageListener() {
 						@Override
 						public void receive(IvyClient client, String[] args) {
+							System.out.println("E1 : REGEX_SRA5_VERT");
 							currentCommand.setColor(AvailableColors.GREEN);
 							currentState = States.E1;
 						}
@@ -233,12 +240,14 @@ public class MainProjet {
 					this.ivy.bindMsg(IvyRecognizedMessages.REGEX_MOUSE_CLICKED, new IvyMessageListener() {
 						@Override
 						public void receive(IvyClient client, String[] args) {
+							System.out.println("E1 : REGEX_MOUSE_CLICKED");
 							currentCommand.setPosX(Integer.parseInt(args[0]));
 							currentCommand.setPosY(Integer.parseInt(args[1]));
 							currentState = States.E3;
 						}
 					});
-					
+
+					Thread.sleep(1000);	
 					break;
 				case E2:
 					//déclencher timer 2s si aucune informations données
@@ -311,15 +320,17 @@ public class MainProjet {
 					//go E0
 					//sinon
 					//go E1
-					if(currentCommand.isComplete()) {
-						ACommand currentCommandToExecute = CommandBuilder.buildCommand(currentCommand);
+					if(this.currentCommand.checkAnComplete()) {
+						ACommand currentCommandToExecute = CommandBuilder.buildCommand(this.currentCommand);
 						currentCommandToExecute.execute();
+						this.currentCommand = new CommandToBeCreated(ivy);
 						currentState = States.E0;
 					}
 					else {
 						currentState = States.E1;
 					}
-					
+
+					Thread.sleep(1000);	
 					break;
 				case E3:
 					//déclencher timer 2s si aucune informations données
@@ -331,24 +342,25 @@ public class MainProjet {
 					
 					//si commande complete
 					//executer
-					//reset currentCommand TODO
+					//reset currentCommand
 					//go E0
-					//sinon
-					//go E1
-					if(currentCommand.isComplete()) {
+					if(this.currentCommand.checkAnComplete()) {
+						System.out.println("--------------------");
+						System.out.println("E3 : execute command");
+						System.out.println("--------------------");
 						ACommand currentCommandToExecute = CommandBuilder.buildCommand(currentCommand);
 						currentCommandToExecute.execute();
+						this.currentCommand = new CommandToBeCreated(ivy);
+						Thread.sleep(1000);
 						currentState = States.E0;
 					}
-					else {
-						currentState = States.E1;
-					}
+					Thread.sleep(1000);	
 					break;
 
 				default:
 					break;
 				}
-			}while(true);
+			}
 					
 		} catch (IvyException e) {
 			e.printStackTrace();

@@ -6,7 +6,7 @@ import fr.dgac.ivy.IvyException;
 public abstract class ACommand {
 	
 	private String command;
-	private Ivy ivy;
+	protected Ivy ivy;
 	
 	public ACommand(Ivy ivy) {
 		this.ivy = ivy;

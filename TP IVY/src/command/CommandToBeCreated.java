@@ -75,13 +75,15 @@ public class CommandToBeCreated {
 		this.color = color;
 	}
 
-	public boolean isComplete() {
+	public boolean checkAnComplete() {
 		switch(action) {
 			case Creer:
+				if(color == null) {
+					color = AvailableColors.RANDOM;
+				}
 				if(shape != null 
 					&& posX != null
-					&& posY != null
-					&& color != null) {
+					&& posY != null) {
 						return true;
 				}
 				break;

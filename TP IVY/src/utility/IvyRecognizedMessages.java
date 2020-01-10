@@ -8,6 +8,7 @@ package utility;
  */
 public class IvyRecognizedMessages {
 	public static final String REGEX_MOUSE_CLICKED = "^Palette:MouseClicked x=(.*) y=(.*).*$";
+	public static final String REGEX_TESTER_POINT = "^Palette:ResultatTesterPoint x=(.*) y=(.*) nom=(.*).*$";
 	
 	public static final String REGEX_SRA5_ICI = "^sra5 Parsed=ici.*$";
 	public static final String REGEX_SRA5_ALEATOIRE = "^sra5 Parsed=aleatoire.*$";

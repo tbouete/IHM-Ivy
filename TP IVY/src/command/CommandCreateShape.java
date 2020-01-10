@@ -73,6 +73,13 @@ public class CommandCreateShape extends ACommand {
 		}
 	}
 	
+	public void setAllParametersRandom() {
+		this.setAllParameters((int)(Math.random()*200), (int)(Math.random()*200),
+				(int)(Math.random()*200), (int)(Math.random()*200),
+				(int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255),
+				(int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+	}
+	
 	private void setAllParametersRed(int x, int y,
 			int longeur, int hauteur) {
 		int[] red = IvyUtilitaire.COLOR_RED;
@@ -131,12 +138,5 @@ public class CommandCreateShape extends ACommand {
 				longeur, hauteur,
 				golden[0], golden[1], golden[2],
 				border[0], border[1], border[2]);
-	}
-	
-	public void setAllParametersRandom() {
-		this.setAllParameters((int)(Math.random()*200), (int)(Math.random()*200),
-				(int)(Math.random()*200), (int)(Math.random()*200),
-				(int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255),
-				(int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
 	}
 }

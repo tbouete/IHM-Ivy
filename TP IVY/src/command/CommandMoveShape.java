@@ -4,10 +4,12 @@ import fr.dgac.ivy.Ivy;
 
 public class CommandMoveShape extends ACommand{
 
-	// TODO : implement me
 	public CommandMoveShape(Ivy ivy) {
 		super(ivy);
-		// TODO Auto-generated constructor stub
+	}
+	
+	public void setAllParameters(String nom, int x, int y) {
+		this.setCommand("Palette:DeplacerObjetAbsolu nom=" + nom + " x=" + x + " y=" + y);
 	}
 
 }

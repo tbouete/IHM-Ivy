@@ -15,13 +15,13 @@ public class CommandBuilder {
 				return commandCreate;
 	
 			case Supprimer:
-				// TODO : complete me once CommandDeleteShape is implemented
-				CommandDeleteShape commandDelete = new CommandDeleteShape(commandToBeCreated.getIvy());
+				CommandDeleteShape commandDelete = new CommandDeleteShape(commandToBeCreated.getIvy());				
+				commandDelete.setAllParamters(commandToBeCreated.getNameSelectedShape());
 				return commandDelete;
 	
 			case Deplacer:
-				// TODO : complete me once CommandMoveShape is implemented
-				CommandMoveShape commandMove = new CommandMoveShape(commandToBeCreated.getIvy());
+				CommandMoveShape commandMove = new CommandMoveShape(commandToBeCreated.getIvy());				
+				commandMove.setAllParameters(commandToBeCreated.getNameSelectedShape(), commandToBeCreated.getTargetPosX(), commandToBeCreated.getTargetPosY());				
 				return commandMove;			
 			default:
 				CommandCreateShape commandDefault = new CommandCreateShape(commandToBeCreated.getIvy(), AvailableShapes.RECTANGLE);

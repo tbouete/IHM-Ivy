@@ -38,22 +38,21 @@
 	  <item><ruleref uri="#blanc"/>
 		<tag>out="blanc";</tag></item>
     </one-of>
-    <ruleref special="GARBAGE" />
   </rule>
        
 
   <rule id="ici">
 	<one-of>
 		<item>ici</item>
-		<item>l‡</item>
-		<item>‡ cette position</item>
+		<item>l√†</item>
+		<item>√† cette position</item>
 		<item>here</item>
 	</one-of>
   </rule>
   
   <rule id="aleatoire">
 	<one-of>
-		<item>alÈatoire</item>
+		<item>al√©atoire</item>
 		<item>random</item>
 	</one-of>
   </rule>
@@ -61,7 +60,7 @@
    <rule id="cet_objet">
 	<one-of>
 		<item>cet objet</item>
-		<item>celui-l‡</item>
+		<item>celui-l√†</item>
 		<item>this object</item>
 		<item>that object</item>
 		<item>this one</item>
@@ -87,7 +86,7 @@
   
   <rule id="cette_couleur">
 	<one-of>
-		<item>cette couleur/item>
+		<item>cette couleur</item>
 		<item>this color</item>
 		<item>that color</item>
 	</one-of>
@@ -114,7 +113,7 @@
   <rule id="dore">
 	<one-of>
 		<item>golden</item>
-		<item>dorÈ</item>
+		<item>dore</item>
 	</one-of>
   </rule>
   <rule id="noir">
